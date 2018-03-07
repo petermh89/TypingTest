@@ -28,11 +28,7 @@ namespace TypingTest
 
 
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            timer1.Stop();
-        }
-
+        
         private void button3_Click(object sender, EventArgs e)
         {
             ms = 0;
@@ -45,6 +41,9 @@ namespace TypingTest
             label1.Text = 0 + ":" + 0 + ":" + 0.ToString();
             WordsLabel.Text = "0";
             WordsPerMin.Text = "0";
+            //charCountOutput = "0";
+            timer1.Stop();
+            textBox1.Enabled = true;
             textBox1.Clear();
         }
 
@@ -71,7 +70,28 @@ namespace TypingTest
                 WordsPerMin_Click(sender,e);
                 textBox1.Enabled = false;
             }
-            
+
+            //counts the number of characters in real time
+            var userInput = textBox1.Text;
+            charCountOutput.Text = userInput.Length.ToString();
+
+            List<char> listOfChars = new List<char>();
+            foreach (char let in userInput)
+            {
+                if (listOfChars.Contains(let))
+                {
+                    continue;
+                }
+                else
+                {
+                    listOfChars.Add(let);
+                }
+
+            }
+            foreach (char i in listOfChars)
+            {
+                Console.WriteLine(i);
+            }
         }
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
@@ -142,14 +162,19 @@ namespace TypingTest
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void label6_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void charCountOutput_Click(object sender, EventArgs e)
         {
-            timer1.Start();
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)

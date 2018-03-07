@@ -31,9 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -44,50 +42,36 @@
             this.label5 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.charlabel = new System.Windows.Forms.Label();
+            this.charCountOutput = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Schoolbook", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(146, 56);
+            this.label1.Location = new System.Drawing.Point(186, 147);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 25);
+            this.label1.Size = new System.Drawing.Size(57, 25);
             this.label1.TabIndex = 0;
-            this.label1.Text = "0:0:0:0";
+            this.label1.Text = "0:0:0";
             this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(69, 203);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 33);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Start";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(69, 261);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 36);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Stop";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(69, 327);
+            this.button3.Location = new System.Drawing.Point(87, 404);
             this.button3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(100, 31);
@@ -101,7 +85,7 @@
             this.textBox1.Font = new System.Drawing.Font("Century Schoolbook", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(107, 302);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox1.MaxLength = 1000;
+            this.textBox1.MaxLength = 40000;
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(640, 250);
@@ -114,7 +98,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Century Schoolbook", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(28, 103);
+            this.label2.Location = new System.Drawing.Point(28, 209);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(144, 25);
@@ -125,7 +109,7 @@
             // WordsLabel
             // 
             this.WordsLabel.AutoSize = true;
-            this.WordsLabel.Location = new System.Drawing.Point(200, 107);
+            this.WordsLabel.Location = new System.Drawing.Point(225, 213);
             this.WordsLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.WordsLabel.Name = "WordsLabel";
             this.WordsLabel.Size = new System.Drawing.Size(20, 21);
@@ -136,7 +120,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Schoolbook", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(28, 56);
+            this.label3.Location = new System.Drawing.Point(28, 147);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(79, 25);
@@ -145,16 +129,18 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel1.BackColor = System.Drawing.Color.DimGray;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.charCountOutput);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.charlabel);
+            this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.WordsPerMin);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.WordsLabel);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Location = new System.Drawing.Point(937, 40);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -165,7 +151,7 @@
             // WordsPerMin
             // 
             this.WordsPerMin.AutoSize = true;
-            this.WordsPerMin.Location = new System.Drawing.Point(200, 151);
+            this.WordsPerMin.Location = new System.Drawing.Point(225, 265);
             this.WordsPerMin.Name = "WordsPerMin";
             this.WordsPerMin.Size = new System.Drawing.Size(20, 21);
             this.WordsPerMin.TabIndex = 9;
@@ -176,7 +162,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Schoolbook", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(29, 147);
+            this.label5.Location = new System.Drawing.Point(28, 261);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(165, 25);
             this.label5.TabIndex = 8;
@@ -205,6 +191,74 @@
             this.label4.TabIndex = 10;
             this.label4.Text = "Sample Text";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Schoolbook", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(82, 14);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(90, 26);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Status:";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Schoolbook", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(38, 59);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(269, 50);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "Start typing sample text \r\nto begin test.";
+            // 
+            // charlabel
+            // 
+            this.charlabel.AutoSize = true;
+            this.charlabel.Font = new System.Drawing.Font("Century Schoolbook", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.charlabel.Location = new System.Drawing.Point(29, 319);
+            this.charlabel.Name = "charlabel";
+            this.charlabel.Size = new System.Drawing.Size(188, 25);
+            this.charlabel.TabIndex = 11;
+            this.charlabel.Text = "Character Count";
+            // 
+            // charCountOutput
+            // 
+            this.charCountOutput.AutoSize = true;
+            this.charCountOutput.Location = new System.Drawing.Point(225, 323);
+            this.charCountOutput.Name = "charCountOutput";
+            this.charCountOutput.Size = new System.Drawing.Size(20, 21);
+            this.charCountOutput.TabIndex = 12;
+            this.charCountOutput.Text = "0";
+            this.charCountOutput.Click += new System.EventHandler(this.charCountOutput_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(203, 7);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(181, 21);
+            this.label8.TabIndex = 11;
+            this.label8.Text = "Characters Typed:";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.label9);
+            this.panel2.Controls.Add(this.label8);
+            this.panel2.Location = new System.Drawing.Point(107, 593);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(640, 113);
+            this.panel2.TabIndex = 12;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(109, 69);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(65, 21);
+            this.label9.TabIndex = 12;
+            this.label9.Text = "label9";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 21F);
@@ -212,6 +266,7 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1215, 862);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.panel1);
@@ -222,6 +277,8 @@
             this.Text = "TypingTest";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -230,9 +287,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
@@ -243,6 +298,13 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label WordsPerMin;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label charlabel;
+        private System.Windows.Forms.Label charCountOutput;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label9;
     }
 }
 
