@@ -20,7 +20,7 @@ namespace TypingTest
 
         //sample text as string so it can be changed easier if another passage is required all calcs
         //done in ** in textBox1_TextChanged method
-        string sampleText = "When Mr. Bilbo Baggins of Bag End announced that he would shortly be th";
+        string sampleText = "When Mr. Bilbo Baggins of Bag End announced that he would shortly be celebrating his eleventy-first birthday with a party of special magnificence, there was much talk and excitement in Hobbiton.Bilbo was very rich and very peculiar, and had been the wonder of the Shire for sixty years, ever since his remarkable disappearance and unexpected return.";
         float wordsPerMin = 0;
         float numOfSec = 0;
         float numOfMs = 0;
@@ -39,6 +39,7 @@ namespace TypingTest
             WordsLabel.Text = "0";
             WordsPerMin.Text = "0";
             timer1.Stop();
+            PercError.Text = "0";
             textBox1.Enabled = true;
             textBox1.Clear();
         }
@@ -54,26 +55,22 @@ namespace TypingTest
             int charCount = userInput.Count(c => !Char.IsWhiteSpace(c));
             charCountOutput.Text = charCount.ToString();
 
-            //**sample text length calculated here incase text needs to be changed
-            int sampleCount = 1;
-            for ( int i = 0; i < sampleText.Length; i++ )
-            {
-                if ( sampleText[i] == ' ')
-                {
-                    sampleCount++;
-                }
-            }
 
             //This starts the timer once the user begins typing and changes status message
             if (textBox1.Modified)
             {
                 timer1.Start();
-                StatusMessage_Click(sender, e);   
+                StatusMessage_Click(sender, e);
+                
             }
+           
+            //these variables count the whitespace in user text and sample
+            int sampleCount = sampleText.Count(y => Char.IsWhiteSpace(y));
+            int userSpaceCount = userInput.Count(z => Char.IsWhiteSpace(z));
+            //this counts the chars in sample text
+            int sampleCharCount = sampleText.Count(x => !Char.IsWhiteSpace(x));
 
-            //This compares word count of the input and once it matches the sample stops the clock
-            //also disables textbox and changes status message
-            if (numOfWords >= sampleCount)
+            if ( charCount == sampleCharCount || userSpaceCount == sampleCount + 3  )
             {
                 timer1.Stop();
                 WordsPerMin_Click(sender,e);
@@ -81,7 +78,7 @@ namespace TypingTest
                 StatusMessage.Text = "You're Done! check your score bellow";
 
                 //once user is done this gather all unique chars and shows in bottom pane
-                foreach ( char let in userInput)
+                foreach ( char let in userInput )
                 {
                     listOfChars.Add(let);
                 }
@@ -93,6 +90,9 @@ namespace TypingTest
                     charUsed = charUsed + " " + i;
                 }
                 UniqueChar.Text = charUsed.ToString();
+
+                SpellCheck(sender, e);
+                
             }
 
         }
@@ -159,6 +159,7 @@ namespace TypingTest
             }
 
             wordsPerMin = numOfWords / numOfMin;
+            wordsPerMin = (float)Math.Round(wordsPerMin, 2);
             WordsPerMin.Text = wordsPerMin.ToString();
 
         }
@@ -193,7 +194,7 @@ namespace TypingTest
         {
             label1.Text = min + ":" + sec + ":" + ms.ToString();
             ms++;
-            if (ms > 10)
+            if (ms > 9)
             {
                 sec++;
                 ms = 0;
@@ -211,6 +212,30 @@ namespace TypingTest
             }
 
      
+        }
+
+        //This calculates the percent error by comparing the input of the user to the sample text
+        private void SpellCheck(object sender, EventArgs e)
+        {
+            var userInput = textBox1.Text;
+            var sampleWords = sampleText.Split(' ');
+            var userWords = userInput.Split(' ');
+            var correctSpell = 0;
+
+            foreach ( string word in userWords )
+            {
+                if (sampleWords.Contains(word))
+                {
+                    correctSpell++;
+                    
+                }
+            }
+            float correctCount = correctSpell;
+            var rawError = correctCount / 57;
+            float percentError =( rawError * 100);
+            percentError = (float) Math.Round(percentError, 2);
+            PercError.Text = percentError + " %".ToString();
+
         }
     }
 }

@@ -38,6 +38,8 @@
             this.WordsLabel = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.PercError = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.charCountOutput = new System.Windows.Forms.Label();
             this.StatusMessage = new System.Windows.Forms.Label();
             this.charlabel = new System.Windows.Forms.Label();
@@ -57,7 +59,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Schoolbook", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(186, 147);
+            this.label1.Location = new System.Drawing.Point(228, 147);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 25);
@@ -71,7 +73,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(87, 404);
+            this.button3.Location = new System.Drawing.Point(93, 442);
             this.button3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(100, 31);
@@ -82,13 +84,13 @@
             // 
             // textBox1
             // 
-            this.textBox1.Font = new System.Drawing.Font("Century Schoolbook", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(107, 302);
+            this.textBox1.Font = new System.Drawing.Font("Century Schoolbook", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(107, 235);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox1.MaxLength = 40000;
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(640, 250);
+            this.textBox1.Size = new System.Drawing.Size(640, 143);
             this.textBox1.TabIndex = 4;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
@@ -109,7 +111,7 @@
             // WordsLabel
             // 
             this.WordsLabel.AutoSize = true;
-            this.WordsLabel.Location = new System.Drawing.Point(225, 213);
+            this.WordsLabel.Location = new System.Drawing.Point(247, 213);
             this.WordsLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.WordsLabel.Name = "WordsLabel";
             this.WordsLabel.Size = new System.Drawing.Size(20, 21);
@@ -131,6 +133,8 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.DimGray;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.PercError);
+            this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.charCountOutput);
             this.panel1.Controls.Add(this.StatusMessage);
             this.panel1.Controls.Add(this.charlabel);
@@ -142,16 +146,34 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.button3);
-            this.panel1.Location = new System.Drawing.Point(937, 40);
+            this.panel1.Location = new System.Drawing.Point(938, 33);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(306, 581);
+            this.panel1.Size = new System.Drawing.Size(306, 478);
             this.panel1.TabIndex = 8;
+            // 
+            // PercError
+            // 
+            this.PercError.AutoSize = true;
+            this.PercError.Location = new System.Drawing.Point(247, 351);
+            this.PercError.Name = "PercError";
+            this.PercError.Size = new System.Drawing.Size(20, 21);
+            this.PercError.TabIndex = 14;
+            this.PercError.Text = "0";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(32, 351);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(87, 21);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "%  Error";
             // 
             // charCountOutput
             // 
             this.charCountOutput.AutoSize = true;
-            this.charCountOutput.Location = new System.Drawing.Point(225, 323);
+            this.charCountOutput.Location = new System.Drawing.Point(247, 264);
             this.charCountOutput.Name = "charCountOutput";
             this.charCountOutput.Size = new System.Drawing.Size(20, 21);
             this.charCountOutput.TabIndex = 12;
@@ -164,16 +186,16 @@
             this.StatusMessage.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StatusMessage.Location = new System.Drawing.Point(29, 52);
             this.StatusMessage.Name = "StatusMessage";
-            this.StatusMessage.Size = new System.Drawing.Size(241, 42);
+            this.StatusMessage.Size = new System.Drawing.Size(362, 21);
             this.StatusMessage.TabIndex = 11;
-            this.StatusMessage.Text = "Start typing sample text \r\nto begin test.";
+            this.StatusMessage.Text = "Start typing sample text to begin test.";
             this.StatusMessage.Click += new System.EventHandler(this.StatusMessage_Click);
             // 
             // charlabel
             // 
             this.charlabel.AutoSize = true;
             this.charlabel.Font = new System.Drawing.Font("Century Schoolbook", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.charlabel.Location = new System.Drawing.Point(29, 319);
+            this.charlabel.Location = new System.Drawing.Point(28, 260);
             this.charlabel.Name = "charlabel";
             this.charlabel.Size = new System.Drawing.Size(188, 25);
             this.charlabel.TabIndex = 11;
@@ -183,7 +205,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Schoolbook", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(82, 14);
+            this.label6.Location = new System.Drawing.Point(126, 9);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(90, 26);
             this.label6.TabIndex = 10;
@@ -193,7 +215,7 @@
             // WordsPerMin
             // 
             this.WordsPerMin.AutoSize = true;
-            this.WordsPerMin.Location = new System.Drawing.Point(225, 265);
+            this.WordsPerMin.Location = new System.Drawing.Point(247, 307);
             this.WordsPerMin.Name = "WordsPerMin";
             this.WordsPerMin.Size = new System.Drawing.Size(20, 21);
             this.WordsPerMin.TabIndex = 9;
@@ -204,7 +226,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Schoolbook", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(28, 261);
+            this.label5.Location = new System.Drawing.Point(28, 303);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(165, 25);
             this.label5.TabIndex = 8;
@@ -213,13 +235,14 @@
             // 
             // textBox2
             // 
+            this.textBox2.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Century Schoolbook", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(107, 33);
+            this.textBox2.Font = new System.Drawing.Font("Century Schoolbook", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(107, 83);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(640, 263);
+            this.textBox2.Size = new System.Drawing.Size(640, 107);
             this.textBox2.TabIndex = 9;
             this.textBox2.Text = resources.GetString("textBox2.Text");
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
@@ -227,7 +250,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(296, 9);
+            this.label4.Location = new System.Drawing.Point(337, 33);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(125, 21);
             this.label4.TabIndex = 10;
@@ -244,11 +267,12 @@
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.SystemColors.HighlightText;
             this.panel2.Controls.Add(this.UniqueChar);
             this.panel2.Controls.Add(this.label8);
-            this.panel2.Location = new System.Drawing.Point(107, 558);
+            this.panel2.Location = new System.Drawing.Point(107, 421);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(640, 113);
+            this.panel2.Size = new System.Drawing.Size(640, 90);
             this.panel2.TabIndex = 12;
             // 
             // UniqueChar
@@ -307,6 +331,8 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label UniqueChar;
+        private System.Windows.Forms.Label PercError;
+        private System.Windows.Forms.Label label7;
     }
 }
 
