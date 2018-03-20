@@ -1,0 +1,10 @@
+C:\Users\phern\Desktop\TypingTest\TypingTest\TypingTest\bin\Debug\TypingTest.exe.config
+C:\Users\phern\Desktop\TypingTest\TypingTest\TypingTest\bin\Debug\TypingTest.exe
+C:\Users\phern\Desktop\TypingTest\TypingTest\TypingTest\bin\Debug\TypingTest.pdb
+C:\Users\phern\Desktop\TypingTest\TypingTest\TypingTest\obj\Debug\TypingTest.csprojResolveAssemblyReference.cache
+C:\Users\phern\Desktop\TypingTest\TypingTest\TypingTest\obj\Debug\TypingTest.Form1.resources
+C:\Users\phern\Desktop\TypingTest\TypingTest\TypingTest\obj\Debug\TypingTest.Properties.Resources.resources
+C:\Users\phern\Desktop\TypingTest\TypingTest\TypingTest\obj\Debug\TypingTest.csproj.GenerateResource.Cache
+C:\Users\phern\Desktop\TypingTest\TypingTest\TypingTest\obj\Debug\TypingTest.csproj.CoreCompileInputs.cache
+C:\Users\phern\Desktop\TypingTest\TypingTest\TypingTest\obj\Debug\TypingTest.exe
+C:\Users\phern\Desktop\TypingTest\TypingTest\TypingTest\obj\Debug\TypingTest.pdb
